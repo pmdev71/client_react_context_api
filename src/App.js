@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useReducer } from 'react';
+import Counter from './Counter';
+import CounterProvider from './CounterProvider';
+
+// const initialState = {
+//   count: 1,
+// };
+
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'increase':
+//       return { ...state, count: state.count + action.payload };
+//     case 'decrease':
+//       return { ...state, count: state.count - 1 };
+//     default:
+//       return state;
+//   }
+// }
 
 function App() {
+  // const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CounterProvider>
+      <Counter />
+    </CounterProvider>
+
+    // <div>
+    //   <button onClick={() => dispatch({ type: 'increase', payload: 5 })}>
+    //     +
+    //   </button>
+    //   <h1>{state.count}</h1>
+    //   {console.log(state)}
+    //   <button onClick={() => dispatch({ type: 'decrease' })}>-</button>
+    // </div>
   );
 }
 
